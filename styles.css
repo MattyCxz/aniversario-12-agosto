@@ -738,6 +738,7 @@ h1 {
 
 .reel-frame--waterfall p,
 .reel-frame--valdivia p,
+.reel-frame--huilo p,
 .reel-frame--casita p {
   align-self: end;
   max-width: 19ch;
@@ -768,8 +769,13 @@ h1 {
   filter: contrast(1.06) saturate(0.86) brightness(0.9);
 }
 
+.reel-frame--huilo img {
+  object-position: center 34%;
+}
+
 .reel-frame--waterfall::after,
 .reel-frame--valdivia::after,
+.reel-frame--huilo::after,
 .reel-frame--casita::after,
 .reel-frame--final::after {
   position: absolute;
@@ -800,31 +806,35 @@ h1 {
 }
 
 .teaser-modal[open] .trailer-progress {
-  animation: trailerProgress 20s linear both;
+  animation: trailerProgress 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--title {
-  animation: trailerTitle 20s linear both;
+  animation: trailerTitle 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--waterfall {
-  animation: trailerImageOne 20s linear both;
+  animation: trailerImageOne 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--valdivia {
-  animation: trailerImageTwo 20s linear both;
+  animation: trailerImageTwo 26s linear both;
+}
+
+.teaser-modal[open] .reel-frame--huilo {
+  animation: trailerImageThree 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--casita {
-  animation: trailerVideoBeat 20s linear both;
+  animation: trailerVideoBeat 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--promise {
-  animation: trailerPromise 20s linear both;
+  animation: trailerPromise 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--final {
-  animation: trailerFinal 20s linear both;
+  animation: trailerFinal 26s linear both;
 }
 
 .teaser-modal[open] .reel-frame--waterfall img {
@@ -833,6 +843,10 @@ h1 {
 
 .teaser-modal[open] .reel-frame--valdivia img {
   animation: trailerDrift 5.2s ease-out both;
+}
+
+.teaser-modal[open] .reel-frame--huilo img {
+  animation: trailerPush 5.2s ease-out both;
 }
 
 .teaser-modal[open] .reel-frame--casita video {
@@ -933,6 +947,28 @@ h1 {
   max-width: 40rem;
   margin: 1.2rem auto 2rem;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.finale__promise {
+  display: grid;
+  width: min(760px, 100%);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0 auto 2.2rem;
+}
+
+.finale__promise span {
+  min-height: 5.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  background:
+    linear-gradient(145deg, rgba(80, 27, 42, 0.42), rgba(38, 52, 71, 0.18)),
+    var(--panel);
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .finale time {
@@ -1037,6 +1073,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .finale__promise {
+    grid-template-columns: 1fr;
+  }
+
   .memory-card {
     min-height: 18rem;
   }
@@ -1083,18 +1123,18 @@ h1 {
 
 @keyframes trailerTitle {
   0%,
-  3% {
+  2% {
     opacity: 0;
     transform: scale(1.08);
   }
 
-  5%,
-  13% {
+  4%,
+  11% {
     opacity: 1;
     transform: scale(1);
   }
 
-  16%,
+  14%,
   100% {
     opacity: 0;
     transform: scale(0.98);
@@ -1103,16 +1143,16 @@ h1 {
 
 @keyframes trailerImageOne {
   0%,
-  14% {
+  12% {
     opacity: 0;
   }
 
-  17%,
-  33% {
+  15%,
+  27% {
     opacity: 1;
   }
 
-  37%,
+  30%,
   100% {
     opacity: 0;
   }
@@ -1120,16 +1160,33 @@ h1 {
 
 @keyframes trailerImageTwo {
   0%,
-  34% {
+  28% {
     opacity: 0;
   }
 
-  38%,
-  51% {
+  31%,
+  42% {
     opacity: 1;
   }
 
-  55%,
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes trailerImageThree {
+  0%,
+  43% {
+    opacity: 0;
+  }
+
+  46%,
+  57% {
+    opacity: 1;
+  }
+
+  60%,
   100% {
     opacity: 0;
   }
@@ -1137,16 +1194,16 @@ h1 {
 
 @keyframes trailerVideoBeat {
   0%,
-  52% {
+  58% {
     opacity: 0;
   }
 
-  56%,
-  70% {
+  61%,
+  72% {
     opacity: 1;
   }
 
-  74%,
+  75%,
   100% {
     opacity: 0;
   }
@@ -1154,13 +1211,13 @@ h1 {
 
 @keyframes trailerPromise {
   0%,
-  71% {
+  73% {
     opacity: 0;
     transform: translateY(1rem);
   }
 
-  75%,
-  83% {
+  76%,
+  84% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -1174,12 +1231,12 @@ h1 {
 
 @keyframes trailerFinal {
   0%,
-  84% {
+  85% {
     opacity: 0;
     transform: scale(1.08);
   }
 
-  90%,
+  89%,
   100% {
     opacity: 1;
     transform: scale(1);
