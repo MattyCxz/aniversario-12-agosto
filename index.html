@@ -11,7 +11,7 @@
     <link rel="preload" as="image" href="assets/anniversary-hero.png" />
     <link rel="preload" as="image" href="assets/nosotros-agosto.jpg" />
     <link rel="preload" as="image" href="assets/valdivia/valdivia-foto-01.jpg" />
-    <link rel="stylesheet" href="styles.css?v=nostalgia1" />
+    <link rel="stylesheet" href="styles.css?v=estrenos1" />
   </head>
   <body>
     <main class="trailer">
@@ -32,7 +32,7 @@
               Ver teaser
             </button>
             <a class="button button--primary" href="#countdown">Ver cuenta regresiva</a>
-            <a class="button button--ghost" href="#moments">Ver momentos</a>
+            <a class="button button--ghost" href="#estrenos">Ver estrenos</a>
           </div>
         </div>
       </section>
@@ -83,7 +83,54 @@
         </div>
       </section>
 
-      <section class="moments" id="moments" aria-labelledby="moments-title">
+      <section class="release-board" id="estrenos" aria-labelledby="estrenos-title">
+        <div class="section-copy">
+          <p class="eyebrow">Cartelera de estrenos</p>
+          <h2 id="estrenos-title">Capitulos que se abren de a poquito</h2>
+          <p>
+            Mientras llega el 12 de agosto, cada recuerdo tendra su propio estreno.
+            Algunos aun esperan detras del telon, pero todos llevan tu nombre.
+          </p>
+        </div>
+        <div class="release-grid" aria-label="Calendario de capitulos">
+          <a class="release-card" href="#moments" data-release-card="moments">
+            <span>12 junio</span>
+            <strong>Valdivia</strong>
+            <p>Donde el sur empezo a parecer pelicula.</p>
+          </a>
+          <a class="release-card" href="#casita" data-release-card="casita">
+            <span>12 julio</span>
+            <strong>Dia en casita</strong>
+            <p>No todo lo inolvidable pasa lejos.</p>
+          </a>
+          <a class="release-card" href="#huilo-huilo" data-release-card="huilo-huilo">
+            <span>1 agosto</span>
+            <strong>Huilo Huilo</strong>
+            <p>El bosque tambien guardo una parte de nosotros.</p>
+          </a>
+          <a class="release-card" href="#scenes" data-release-card="scenes">
+            <span>8 agosto</span>
+            <strong>Te dio nostalgia?</strong>
+            <p>Una vuelta al primer detalle que nacio en pantalla.</p>
+          </a>
+          <a class="release-card" href="#finale" data-release-card="finale">
+            <span>12 agosto</span>
+            <strong>Gran final</strong>
+            <p>El estreno completo de este aniversario.</p>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="moments"
+        id="moments"
+        aria-labelledby="moments-title"
+        data-unlock-date="2026-06-12"
+        data-unlock-card="moments"
+        data-lock-kicker="Capitulo 01"
+        data-lock-title="Valdivia, Region de Los Rios"
+        data-lock-hint="Donde el sur empezo a parecer pelicula."
+      >
         <div class="section-copy moments__heading">
           <p class="eyebrow">Capitulo 01</p>
           <h2 id="moments-title">Valdivia, Region de Los Rios</h2>
@@ -149,7 +196,16 @@
         </div>
       </section>
 
-      <section class="moments home-moment" id="casita" aria-labelledby="casita-title">
+      <section
+        class="moments home-moment"
+        id="casita"
+        aria-labelledby="casita-title"
+        data-unlock-date="2026-07-12"
+        data-unlock-card="casita"
+        data-lock-kicker="Capitulo 02"
+        data-lock-title="Dia en casita"
+        data-lock-hint="No todo lo inolvidable pasa lejos."
+      >
         <div class="section-copy moments__heading">
           <p class="eyebrow">Capitulo 02</p>
           <h2 id="casita-title">Dia en casita</h2>
@@ -176,7 +232,16 @@
         </article>
       </section>
 
-      <section class="moments forest-moment" id="huilo-huilo" aria-labelledby="huilo-title">
+      <section
+        class="moments forest-moment"
+        id="huilo-huilo"
+        aria-labelledby="huilo-title"
+        data-unlock-date="2026-08-01"
+        data-unlock-card="huilo-huilo"
+        data-lock-kicker="Capitulo 03"
+        data-lock-title="Viaje al Huilo Huilo"
+        data-lock-hint="El bosque tambien guardo una parte de nosotros."
+      >
         <div class="section-copy moments__heading">
           <p class="eyebrow">Capitulo 03</p>
           <h2 id="huilo-title">Viaje al Huilo Huilo</h2>
@@ -252,7 +317,15 @@
         </div>
       </section>
 
-      <section class="letter" aria-labelledby="letter-title">
+      <section
+        class="letter"
+        aria-labelledby="letter-title"
+        data-unlock-date="2026-08-12"
+        data-unlock-card="finale"
+        data-lock-kicker="Voz en off"
+        data-lock-title="La carta final"
+        data-lock-hint="Esta parte espera al estreno completo del 12 de agosto."
+      >
         <p class="eyebrow">Voz en off</p>
         <h2 id="letter-title">Cuando llega agosto, el mundo baja la voz</h2>
         <p>
@@ -261,7 +334,16 @@
         </p>
       </section>
 
-      <section class="scenes nostalgia" id="scenes" aria-labelledby="scenes-title">
+      <section
+        class="scenes nostalgia"
+        id="scenes"
+        aria-labelledby="scenes-title"
+        data-unlock-date="2026-08-08"
+        data-unlock-card="scenes"
+        data-lock-kicker="Antes del estreno"
+        data-lock-title="Te dio nostalgia?"
+        data-lock-hint="Una vuelta al primer detalle que nacio en pantalla."
+      >
         <div class="section-copy">
           <p class="eyebrow">Un recuerdo antes del estreno</p>
           <h2 id="scenes-title">Te dio nostalgia?</h2>
@@ -285,7 +367,16 @@
         </article>
       </section>
 
-      <section class="finale" aria-labelledby="finale-title">
+      <section
+        class="finale"
+        id="finale"
+        aria-labelledby="finale-title"
+        data-unlock-date="2026-08-12"
+        data-unlock-card="finale"
+        data-lock-kicker="Gran final"
+        data-lock-title="Esta pelicula no termina"
+        data-lock-hint="El estreno completo se abre el 12 de agosto."
+      >
         <p class="eyebrow">Solo en nuestra vida</p>
         <h2 id="finale-title">Esta pelicula no termina</h2>
         <p>Se renueva contigo, escena por escena, beso por beso, aniversario tras aniversario.</p>

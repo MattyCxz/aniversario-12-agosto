@@ -36,6 +36,87 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+const releaseSections = document.querySelectorAll("[data-unlock-date]");
+const releaseCards = document.querySelectorAll("[data-release-card]");
+const releaseDateFormatter = new Intl.DateTimeFormat("es-CL", {
+  day: "numeric",
+  month: "long",
+});
+
+function getReleaseClock() {
+  const params = new URLSearchParams(window.location.search);
+  const preview = params.get("preview");
+
+  if (preview === "all") {
+    return new Date("2026-08-13T12:00:00");
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(preview || "")) {
+    return new Date(`${preview}T12:00:00`);
+  }
+
+  return new Date();
+}
+
+function parseUnlockDate(value) {
+  const [year, month, day] = value.split("-").map(Number);
+  return new Date(year, month - 1, day, 0, 0, 0);
+}
+
+function startOfDay(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function daysUntil(unlockDate, currentDate) {
+  const dayLength = 1000 * 60 * 60 * 24;
+  return Math.max(
+    Math.ceil((startOfDay(unlockDate) - startOfDay(currentDate)) / dayLength),
+    0
+  );
+}
+
+function lockSection(section, unlockDate, currentDate) {
+  const remaining = daysUntil(unlockDate, currentDate);
+  const dateText = releaseDateFormatter.format(unlockDate);
+  const waitText = remaining === 1 ? "Falta 1 dia" : `Faltan ${remaining} dias`;
+
+  section.classList.add("is-locked");
+  section.innerHTML = `
+    <article class="lock-card">
+      <p class="lock-card__kicker">${section.dataset.lockKicker}</p>
+      <span class="lock-card__date">Se desbloquea el ${dateText}</span>
+      <h2>${section.dataset.lockTitle}</h2>
+      <p>${section.dataset.lockHint}</p>
+      <p>${waitText} para ver este capitulo.</p>
+    </article>
+  `;
+}
+
+function applyReleaseSchedule() {
+  const currentDate = getReleaseClock();
+  const unlockedCards = new Set();
+
+  for (const section of releaseSections) {
+    const unlockDate = parseUnlockDate(section.dataset.unlockDate);
+    const isUnlocked = startOfDay(currentDate) >= startOfDay(unlockDate);
+    const cardName = section.dataset.unlockCard;
+
+    if (isUnlocked) {
+      unlockedCards.add(cardName);
+      section.classList.add("is-unlocked");
+    } else {
+      lockSection(section, unlockDate, currentDate);
+    }
+  }
+
+  for (const card of releaseCards) {
+    const cardName = card.dataset.releaseCard;
+    card.dataset.state = unlockedCards.has(cardName) ? "unlocked" : "locked";
+  }
+}
+
+applyReleaseSchedule();
+
 const modal = document.querySelector(".teaser-modal");
 const triggers = document.querySelectorAll(".trailer-trigger");
 const closeButton = document.querySelector(".modal-close");
