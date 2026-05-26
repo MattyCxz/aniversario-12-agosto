@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>12 de agosto | Nuestro aniversario</title>
+    <meta
+      name="description"
+      content="Una pagina romantica estilo trailer de pelicula para celebrar el aniversario del 12 de agosto."
+    />
+    <link rel="preload" as="image" href="assets/anniversary-hero.png" />
+    <link rel="preload" as="image" href="assets/nosotros-agosto.jpg" />
+    <link rel="preload" as="image" href="assets/valdivia/valdivia-foto-01.jpg" />
+    <link rel="stylesheet" href="styles.css?v=huilo4" />
+  </head>
+  <body>
+    <main class="trailer">
+      <section class="hero" aria-labelledby="main-title">
+        <img
+          class="hero__image"
+          src="assets/anniversary-hero.png"
+          alt="Dos personas tomadas de la mano en una azotea iluminada como una escena romantica de pelicula"
+        />
+        <div class="hero__veil"></div>
+        <div class="film-grain" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="kicker">Una historia escrita en miradas</p>
+          <h1 id="main-title">12 de agosto</h1>
+          <p class="tagline">El dia en que nuestro para siempre vuelve a estrenarse.</p>
+          <div class="hero__actions" aria-label="Acciones principales">
+            <button class="button button--primary trailer-trigger" type="button">
+              Ver teaser
+            </button>
+            <a class="button button--primary" href="#countdown">Ver cuenta regresiva</a>
+            <a class="button button--ghost" href="#moments">Ver momentos</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown" id="countdown" aria-labelledby="countdown-title">
+        <div class="section-copy">
+          <p class="eyebrow">Proximamente</p>
+          <h2 id="countdown-title">Nuestro gran estreno</h2>
+        </div>
+        <div class="timer" aria-live="polite">
+          <div>
+            <strong id="days">--</strong>
+            <span>Dias</span>
+          </div>
+          <div>
+            <strong id="hours">--</strong>
+            <span>Horas</span>
+          </div>
+          <div>
+            <strong id="minutes">--</strong>
+            <span>Minutos</span>
+          </div>
+          <div>
+            <strong id="seconds">--</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="teaser" aria-labelledby="teaser-title">
+        <div class="teaser__poster">
+          <img
+            src="assets/nosotros-agosto.jpg"
+            alt="Foto de la pareja frente a una cascada"
+          />
+          <div class="teaser__badge">Teaser oficial</div>
+        </div>
+        <div class="teaser__copy">
+          <p class="eyebrow">Basada en hechos reales</p>
+          <h2 id="teaser-title">Antes de agosto, una mirada al comienzo</h2>
+          <p>
+            Una foto, una promesa y esa sensacion de que lo mejor todavia esta por
+            estrenarse.
+          </p>
+          <button class="button button--ghost trailer-trigger" type="button">
+            Reproducir avance
+          </button>
+        </div>
+      </section>
+
+      <section class="moments" id="moments" aria-labelledby="moments-title">
+        <div class="section-copy moments__heading">
+          <p class="eyebrow">Capitulo 01</p>
+          <h2 id="moments-title">Valdivia, Region de Los Rios</h2>
+          <p>
+            El primer avance de este viaje: lluvia, cafe, caminos del sur y recuerdos
+            que ya parecen escenas de pelicula.
+          </p>
+        </div>
+
+        <article class="moment-feature">
+          <div class="moment-feature__media">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+            >
+              <source src="assets/valdivia/valdivia-trailer.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="moment-feature__copy">
+            <p class="eyebrow">Trailer de viaje</p>
+            <h3>Lo que viene en agosto empieza a sentirse aqui</h3>
+            <p>
+              Un recuerdo convertido en adelanto: como si Valdivia fuera el primer
+              capitulo antes del estreno grande.
+            </p>
+          </div>
+        </article>
+
+        <div class="memory-grid" aria-label="Recuerdos del viaje a Valdivia">
+          <article class="memory-card memory-card--image">
+            <img
+              src="assets/valdivia/valdivia-foto-01.jpg"
+              alt="Grupo de amigos en una cafeteria durante el viaje a Valdivia"
+            />
+            <div>
+              <span>Foto</span>
+              <h3>Pausa con sabor a sur</h3>
+            </div>
+          </article>
+
+          <article class="memory-card memory-card--image">
+            <img
+              src="assets/valdivia/valdivia-postal.jpg"
+              alt="Foto de la pareja en un espacio iluminado con luces moradas"
+            />
+            <div>
+              <span>Foto</span>
+              <h3>Luces de viaje</h3>
+            </div>
+          </article>
+
+          <article class="memory-card memory-card--image">
+            <img
+              src="assets/valdivia/valdivia-recuerdo.jpg"
+              alt="Vista nocturna de luces reflejadas en el rio durante el viaje"
+            />
+            <div>
+              <span>Foto</span>
+              <h3>Noche sobre el rio</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="moments home-moment" id="casita" aria-labelledby="casita-title">
+        <div class="section-copy moments__heading">
+          <p class="eyebrow">Capitulo 02</p>
+          <h2 id="casita-title">Dia en casita</h2>
+          <p>
+            Porque tambien hay escenas favoritas en lo simple: estar cerca, reir
+            bajito y dejar que el dia pase con calma.
+          </p>
+        </div>
+
+        <article class="moment-feature moment-feature--home">
+          <div class="moment-feature__media">
+            <video autoplay controls loop muted playsinline preload="auto">
+              <source src="assets/casita/dia-en-casita-final.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="moment-feature__copy">
+            <p class="eyebrow">Escena intima</p>
+            <h3>El amor tambien se graba en casa</h3>
+            <p>
+              Un momento tranquilo, de esos que no necesitan escenario grande para
+              sentirse como pelicula.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="moments forest-moment" id="huilo-huilo" aria-labelledby="huilo-title">
+        <div class="section-copy moments__heading">
+          <p class="eyebrow">Capitulo 03</p>
+          <h2 id="huilo-title">Viaje al Huilo Huilo</h2>
+          <p>
+            Un capitulo de bosque, agua y caminos del sur: esos dias que parecen
+            guardados para cuando agosto necesite recordar lo bonito que viene.
+          </p>
+        </div>
+
+        <article class="moment-feature moment-feature--forest">
+          <div class="moment-feature__media">
+            <video
+              class="portrait-video"
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/huilo-huilo/huilo-huilo-poster-01.jpg"
+            >
+              <source src="assets/huilo-huilo/huilo-huilo-video-01.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="moment-feature__copy">
+            <p class="eyebrow">Trailer de bosque</p>
+            <h3>El sur tambien tiene magia</h3>
+            <p>
+              Huilo Huilo queda como otro adelanto de nuestra pelicula: naturaleza,
+              risas y una escapada que se siente imposible de olvidar.
+            </p>
+          </div>
+        </article>
+
+        <div class="memory-grid" aria-label="Recuerdos del viaje al Huilo Huilo">
+          <article class="memory-card memory-card--image">
+            <img
+              src="assets/huilo-huilo/huilo-huilo-foto.jpg"
+              alt="Foto del viaje al Huilo Huilo"
+            />
+            <div>
+              <span>Foto</span>
+              <h3>Postal del bosque</h3>
+            </div>
+          </article>
+
+          <article class="memory-card memory-card--video">
+            <video controls playsinline preload="metadata" poster="assets/huilo-huilo/huilo-huilo-poster-02.jpg">
+              <source src="assets/huilo-huilo/huilo-huilo-video-02.mp4" type="video/mp4" />
+            </video>
+            <div>
+              <span>Clip</span>
+              <h3>Camino entre arboles</h3>
+            </div>
+          </article>
+
+          <article class="memory-card memory-card--video">
+            <video controls playsinline preload="metadata" poster="assets/huilo-huilo/huilo-huilo-poster-03.jpg">
+              <source src="assets/huilo-huilo/huilo-huilo-video-03.mp4" type="video/mp4" />
+            </video>
+            <div>
+              <span>Clip</span>
+              <h3>Escena del sur</h3>
+            </div>
+          </article>
+
+          <article class="memory-card memory-card--video">
+            <video controls playsinline preload="metadata" poster="assets/huilo-huilo/huilo-huilo-poster-04.jpg">
+              <source src="assets/huilo-huilo/huilo-huilo-video-04.mp4" type="video/mp4" />
+            </video>
+            <div>
+              <span>Clip</span>
+              <h3>Un recuerdo en movimiento</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="letter" aria-labelledby="letter-title">
+        <p class="eyebrow">Voz en off</p>
+        <h2 id="letter-title">Cuando llega agosto, el mundo baja la voz</h2>
+        <p>
+          Y todo vuelve a ese instante en que elegimos caminar juntos. No hace falta
+          musica de fondo para saberlo: contigo, cada dia tiene escena favorita.
+        </p>
+      </section>
+
+      <section class="scenes" id="scenes" aria-labelledby="scenes-title">
+        <div class="section-copy">
+          <p class="eyebrow">Escenas inolvidables</p>
+          <h2 id="scenes-title">El trailer de lo nuestro</h2>
+        </div>
+        <div class="scene-grid">
+          <article class="scene-card">
+            <span>01</span>
+            <h3>El encuentro</h3>
+            <p>Una casualidad que se quedo a vivir en la memoria.</p>
+          </article>
+          <article class="scene-card">
+            <span>02</span>
+            <h3>La promesa</h3>
+            <p>Elegirnos incluso en los dias comunes, donde el amor demuestra oficio.</p>
+          </article>
+          <article class="scene-card">
+            <span>03</span>
+            <h3>El regreso</h3>
+            <p>Cada 12 de agosto, volver al principio con mas razones que antes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="finale" aria-labelledby="finale-title">
+        <p class="eyebrow">Solo en nuestra vida</p>
+        <h2 id="finale-title">Esta pelicula no termina</h2>
+        <p>Se renueva contigo, escena por escena, beso por beso, aniversario tras aniversario.</p>
+        <time datetime="2026-08-12">12.08</time>
+      </section>
+    </main>
+
+    <dialog class="teaser-modal" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Cerrar teaser">X</button>
+      <div class="teaser-player" aria-live="polite">
+        <div class="trailer-progress" aria-hidden="true"></div>
+        <div class="reel-frame reel-frame--title">
+          <span>Este agosto</span>
+        </div>
+        <div class="reel-frame reel-frame--waterfall">
+          <img
+            src="assets/nosotros-agosto.jpg"
+            alt="Foto de la pareja frente a una cascada"
+          />
+          <p>todo lo que vivimos vuelve como una promesa</p>
+        </div>
+        <div class="reel-frame reel-frame--valdivia">
+          <img
+            src="assets/valdivia/valdivia-foto-01.jpg"
+            alt="Grupo de amigos durante el viaje a Valdivia"
+          />
+          <p>Valdivia guardo un capitulo del sur</p>
+        </div>
+        <div class="reel-frame reel-frame--casita">
+          <video muted playsinline preload="auto">
+            <source src="assets/casita/dia-en-casita-final.mp4" type="video/mp4" />
+          </video>
+          <p>y en casa tambien hay escenas que se quedan</p>
+        </div>
+        <div class="reel-frame reel-frame--promise">
+          <span>no es solo un aniversario</span>
+        </div>
+        <div class="reel-frame reel-frame--final">
+          <p id="modal-title">12 de agosto</p>
+          <strong>Nuestro aniversario</strong>
+        </div>
+      </div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
