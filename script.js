@@ -138,7 +138,7 @@ const trackPrev = document.querySelector("[data-track-prev]");
 const trackNext = document.querySelector("[data-track-next]");
 let currentTrack = 0;
 let soundtrackStarted = false;
-soundtrackAudio.volume = 0.42;
+soundtrackAudio.volume = 0.35;
 
 function updateTrackLabel() {
   trackTitle.textContent = soundtrack[currentTrack].title;
