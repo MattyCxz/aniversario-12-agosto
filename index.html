@@ -11,7 +11,7 @@
     <link rel="preload" as="image" href="assets/anniversary-hero.png" />
     <link rel="preload" as="image" href="assets/nosotros-agosto.jpg" />
     <link rel="preload" as="image" href="assets/valdivia/valdivia-foto-01.jpg" />
-    <link rel="stylesheet" href="styles.css?v=finalestreno1" />
+    <link rel="stylesheet" href="styles.css?v=soundtrack1" />
   </head>
   <body>
     <main class="trailer">
@@ -27,6 +27,23 @@
           <p class="kicker">Una historia escrita en miradas</p>
           <h1 id="main-title">12 de agosto</h1>
           <p class="tagline">El dia en que nuestro para siempre vuelve a estrenarse.</p>
+          <div class="soundtrack" aria-label="Banda sonora">
+            <div>
+              <span>Banda sonora</span>
+              <strong data-track-title>Say You Won't Let Go</strong>
+            </div>
+            <div class="soundtrack__controls">
+              <button class="soundtrack-button" type="button" data-track-prev aria-label="Cancion anterior">
+                Anterior
+              </button>
+              <button class="soundtrack-button soundtrack-button--play" type="button" data-track-toggle>
+                Activar banda sonora
+              </button>
+              <button class="soundtrack-button" type="button" data-track-next aria-label="Siguiente cancion">
+                Siguiente
+              </button>
+            </div>
+          </div>
           <div class="hero__actions" aria-label="Acciones principales">
             <button class="button button--primary trailer-trigger" type="button">
               Ver teaser

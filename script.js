@@ -117,6 +117,72 @@ function applyReleaseSchedule() {
 
 applyReleaseSchedule();
 
+const soundtrack = [
+  {
+    title: "Say You Won't Let Go",
+    src: "assets/audio/01-say-you-wont-let-go.mp3",
+  },
+  {
+    title: "Beautiful Crazy",
+    src: "assets/audio/02-beautiful-crazy.mp3",
+  },
+  {
+    title: "blue",
+    src: "assets/audio/03-blue.mp3",
+  },
+];
+const soundtrackAudio = new Audio(soundtrack[0].src);
+const trackTitle = document.querySelector("[data-track-title]");
+const trackToggle = document.querySelector("[data-track-toggle]");
+const trackPrev = document.querySelector("[data-track-prev]");
+const trackNext = document.querySelector("[data-track-next]");
+let currentTrack = 0;
+let soundtrackStarted = false;
+soundtrackAudio.volume = 0.42;
+
+function updateTrackLabel() {
+  trackTitle.textContent = soundtrack[currentTrack].title;
+  trackToggle.textContent = soundtrackAudio.paused
+    ? soundtrackStarted
+      ? "Reanudar banda sonora"
+      : "Activar banda sonora"
+    : "Pausar banda sonora";
+}
+
+function loadTrack(index, shouldPlay) {
+  currentTrack = (index + soundtrack.length) % soundtrack.length;
+  soundtrackAudio.src = soundtrack[currentTrack].src;
+  soundtrackAudio.load();
+  updateTrackLabel();
+
+  if (shouldPlay) {
+    soundtrackStarted = true;
+    soundtrackAudio.play().catch(() => {
+      updateTrackLabel();
+    });
+  }
+}
+
+function toggleSoundtrack() {
+  soundtrackStarted = true;
+
+  if (soundtrackAudio.paused) {
+    soundtrackAudio.play().catch(() => {});
+  } else {
+    soundtrackAudio.pause();
+  }
+
+  updateTrackLabel();
+}
+
+trackToggle.addEventListener("click", toggleSoundtrack);
+trackPrev.addEventListener("click", () => loadTrack(currentTrack - 1, soundtrackStarted));
+trackNext.addEventListener("click", () => loadTrack(currentTrack + 1, soundtrackStarted));
+soundtrackAudio.addEventListener("play", updateTrackLabel);
+soundtrackAudio.addEventListener("pause", updateTrackLabel);
+soundtrackAudio.addEventListener("ended", () => loadTrack(currentTrack + 1, true));
+updateTrackLabel();
+
 const modal = document.querySelector(".teaser-modal");
 const triggers = document.querySelectorAll(".trailer-trigger");
 const closeButton = document.querySelector(".modal-close");
